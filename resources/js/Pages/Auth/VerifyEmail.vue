@@ -60,3 +60,4 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
         </form>
     </AuthenticationCard>
 </template>
+

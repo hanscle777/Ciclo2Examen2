@@ -149,3 +149,4 @@ const descargarBitacoraExcel = async () => {
   }
 };
 </script>
+

@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout >
     <Head title="Editar Usuario" />
     
     <div class="py-12">
@@ -141,3 +141,4 @@ const submit = () => {
   form.put(`/usuarios/${usuario.id}`);
 };
 </script>
+

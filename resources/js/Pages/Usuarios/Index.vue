@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout>
     <Head title="Usuarios" />
     
     <div class="py-12">
@@ -28,7 +28,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="usuario in usuarios.data" :key="usuario.id" class="border-b">
+                <tr v-if="!usuarios?.data || usuarios.data.length === 0" class="border-b">
+                  <td colspan="5" class="px-6 py-4 text-center text-gray-500">
+                    No hay usuarios disponibles
+                  </td>
+                </tr>
+                <tr v-for="usuario in usuarios?.data" :key="usuario.id" class="border-b">
                   <td class="px-6 py-4">{{ usuario.nombre }} {{ usuario.apellido }}</td>
                   <td class="px-6 py-4">{{ usuario.email }}</td>
                   <td class="px-6 py-4">{{ usuario.rol?.nombre || '-' }}</td>
@@ -90,3 +95,4 @@ const deleteUsuario = (id) => {
   }
 };
 </script>
+

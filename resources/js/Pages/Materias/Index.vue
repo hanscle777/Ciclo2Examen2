@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout>
     <Head title="Materias" />
     
     <div class="py-12">
@@ -55,3 +55,4 @@ const deleteMateria = (id) => {
   }
 };
 </script>
+

@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout >
     <Head title="Crear Materia" />
     
     <div class="py-12">
@@ -75,3 +75,4 @@ const submit = () => {
   form.post('/materias');
 };
 </script>
+

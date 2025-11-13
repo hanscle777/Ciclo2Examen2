@@ -67,3 +67,4 @@ const generarHorarios = async () => {
   }
 };
 </script>
+

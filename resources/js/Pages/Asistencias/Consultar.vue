@@ -103,3 +103,4 @@ const consultar = async () => {
   }
 };
 </script>
+

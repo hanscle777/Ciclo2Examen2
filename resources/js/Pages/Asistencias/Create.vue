@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout>
     <Head title="Registrar Asistencia" />
     
     <div class="py-12">
@@ -137,3 +137,4 @@ const submit = () => {
   form.post('/asistencias');
 };
 </script>
+

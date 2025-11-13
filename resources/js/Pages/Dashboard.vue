@@ -126,3 +126,4 @@ import { Link } from '@inertiajs/vue3';
         </div>
     </AppLayout>
 </template>
+

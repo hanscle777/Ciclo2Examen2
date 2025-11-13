@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout>
     <Head title="Roles" />
     
     <div class="py-12">
@@ -27,7 +27,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="rol in roles.data" :key="rol.id" class="border-b">
+                <tr v-if="!roles?.data || roles.data.length === 0" class="border-b">
+                  <td colspan="4" class="px-6 py-4 text-center text-gray-500">
+                    No hay roles disponibles
+                  </td>
+                </tr>
+                <tr v-for="rol in roles?.data" :key="rol.id" class="border-b">
                   <td class="px-6 py-4">{{ rol.nombre }}</td>
                   <td class="px-6 py-4">{{ rol.descripcion || '-' }}</td>
                   <td class="px-6 py-4">{{ rol.permisos?.length || 0 }}</td>
@@ -66,3 +71,4 @@ const deleteRol = (id) => {
   }
 };
 </script>
+

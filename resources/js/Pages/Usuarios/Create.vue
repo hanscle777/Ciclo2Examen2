@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout >
     <Head title="Crear Usuario" />
     
     <div class="py-12">
@@ -119,3 +119,4 @@ const submit = () => {
   form.post('/usuarios');
 };
 </script>
+

@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout :user="$page.props.auth.user">
+  <AuthenticatedLayout>
     <Head title="Bitácora" />
     
     <div class="py-12">
@@ -101,3 +101,4 @@ const exportarBitacora = () => {
   window.location.href = `/bitacora/exportar?tabla=${filtros.value.tabla}&accion=${filtros.value.accion}`;
 };
 </script>
+

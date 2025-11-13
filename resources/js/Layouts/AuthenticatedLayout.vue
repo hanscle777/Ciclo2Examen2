@@ -18,7 +18,7 @@
             </div>
           </div>
           <div class="flex items-center gap-4">
-            <span class="text-sm text-gray-600">{{ user.nombre }} {{ user.apellido }}</span>
+            <span class="text-sm text-gray-600">{{ user?.nombre }} {{ user?.apellido }}</span>
             <Link href="/logout" method="post" class="text-gray-700 hover:text-gray-900">Salir</Link>
           </div>
         </div>
@@ -31,8 +31,16 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
+
+const page = usePage();
+const user = computed(() => {
+  const pageUser = page.props.user;
+  // Debug: log user data
+  console.log('AuthenticatedLayout user:', pageUser);
+  return pageUser;
+});
 
 defineProps({
   user: Object,

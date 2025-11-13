@@ -194,3 +194,4 @@ onMounted(() => {
   // El componente se monta correctamente
 });
 </script>
+
